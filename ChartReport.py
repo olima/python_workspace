@@ -121,17 +121,17 @@ class Chart:
         for train_data_column_idx_key, ideal_least_square_info_value in chart_info.items():
             train_data_column_idx = train_data_column_idx_key
 
-        train_p1 = figure(title=f"Train data function ({train_data_column_idx})", x_axis_label='x ', y_axis_label=f'y = {train_data_column_idx}')
-        train_p1.line(x_train, y_predicted_train, legend_label=f"line eq : {train_line_eq_str}", line_color="red", line_width=2)
-        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-        train_p1.line(x_train, y_predicted_train, legend_label=f"r_value : {round(_r_value, 5)}", line_color="red",line_width=2)
-        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-        train_p1.line(x_train, y_predicted_train, legend_label=f"r_square : {round(_r_square, 5)}", line_color="red", line_width=2)
-        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-        train_p1.line(x_train, y_predicted_train, legend_label=f"p_value : {round(_p_value, 5)}", line_color="red", line_width=2)
-        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-        train_p1.line(x_train, y_predicted_train, legend_label=f"std_err : {round(std_err, 5)}", line_color="red", line_width=2)
-        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+            train_p1 = figure(title=f"Train data function ({train_data_column_idx})", x_axis_label='x ', y_axis_label=f'y = {train_data_column_idx}')
+            train_p1.line(x_train, y_predicted_train, legend_label=f"line eq : {train_line_eq_str}", line_color="red", line_width=2)
+            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+            train_p1.line(x_train, y_predicted_train, legend_label=f"r_value : {round(_r_value, 5)}", line_color="red",line_width=2)
+            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+            train_p1.line(x_train, y_predicted_train, legend_label=f"r_square : {round(_r_square, 5)}", line_color="red", line_width=2)
+            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+            train_p1.line(x_train, y_predicted_train, legend_label=f"p_value : {round(_p_value, 5)}", line_color="red", line_width=2)
+            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+            train_p1.line(x_train, y_predicted_train, legend_label=f"std_err : {round(std_err, 5)}", line_color="red", line_width=2)
+            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
 
         return train_p1
 
