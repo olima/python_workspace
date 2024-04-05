@@ -205,9 +205,11 @@ class Chart:
             ideal_data_column_idx = list(ideal_least_square_info_value.keys())[0]
             ideal_least_square = list(ideal_least_square_info_value.values())[0]
 
-            train_p1 = figure(title=f"Train data function ({chart_info})", x_axis_label='x', y_axis_label='y')
-            ideal_p1 = figure(title=f"Ideal data function ({ideal_data_column_idx})", x_axis_label='x', y_axis_label=f'y = {ideal_data_column_idx}')
-            ideal_p3 = figure(title=f"Train Vs Ideal data function ({train_data_column_idx} & {ideal_data_column_idx})", x_axis_label='x', y_axis_label=f'y = {train_data_column_idx} & {ideal_data_column_idx} ')
+            plot_width = 500
+            plot_height = 500
+            train_p1 = figure(title=f"Train data function ({chart_info})", x_axis_label='x', y_axis_label='y', width=plot_width, height=plot_height)
+            ideal_p1 = figure(title=f"Ideal data function ({ideal_data_column_idx})", x_axis_label='x', y_axis_label=f'y = {ideal_data_column_idx}', width=plot_width, height=plot_height)
+            ideal_p3 = figure(title=f"Train Vs Ideal data function ({train_data_column_idx} & {ideal_data_column_idx})", x_axis_label='x', y_axis_label=f'y = {train_data_column_idx} & {ideal_data_column_idx} ', width=plot_width, height=plot_height)
 
             x_train = regression_data_df['x_train'].to_numpy()
             y_train = regression_data_df['y_train'].to_numpy()
