@@ -121,17 +121,17 @@ class Chart:
         for train_data_column_idx_key, ideal_least_square_info_value in chart_info.items():
             train_data_column_idx = train_data_column_idx_key
 
-            train_p1 = figure(title=f"Train data function ({train_data_column_idx})", x_axis_label='x ', y_axis_label=f'y = {train_data_column_idx}')
-            train_p1.line(x_train, y_predicted_train, legend_label=f"line eq : {train_line_eq_str}", line_color="red", line_width=2)
-            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-            train_p1.line(x_train, y_predicted_train, legend_label=f"r_value : {round(_r_value, 5)}", line_color="red",line_width=2)
-            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-            train_p1.line(x_train, y_predicted_train, legend_label=f"r_square : {round(_r_square, 5)}", line_color="red", line_width=2)
-            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-            train_p1.line(x_train, y_predicted_train, legend_label=f"p_value : {round(_p_value, 5)}", line_color="red", line_width=2)
-            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
-            train_p1.line(x_train, y_predicted_train, legend_label=f"std_err : {round(std_err, 5)}", line_color="red", line_width=2)
-            train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+        train_p1 = figure(title=f"Train data function ({train_data_column_idx})", x_axis_label='x ', y_axis_label=f'y = {train_data_column_idx}')
+        train_p1.line(x_train, y_predicted_train, legend_label=f"line eq : {train_line_eq_str}", line_color="red", line_width=2)
+        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+        train_p1.line(x_train, y_predicted_train, legend_label=f"r_value : {round(_r_value, 5)}", line_color="red",line_width=2)
+        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+        train_p1.line(x_train, y_predicted_train, legend_label=f"r_square : {round(_r_square, 5)}", line_color="red", line_width=2)
+        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+        train_p1.line(x_train, y_predicted_train, legend_label=f"p_value : {round(_p_value, 5)}", line_color="red", line_width=2)
+        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
+        train_p1.line(x_train, y_predicted_train, legend_label=f"std_err : {round(std_err, 5)}", line_color="red", line_width=2)
+        train_p1.scatter(x_train, y_train, fill_color="red", size=2)
 
         return train_p1
 
@@ -386,7 +386,7 @@ class Chart:
         index_max_deviation = deviation.index(max(deviation))
         color[index_max_deviation] = 'red'
         TOOLS = "pan,box_zoom,reset,save,zoom_out,zoom_in"
-        p = figure(y_range=FactorRange(factors=x_axis_list), max_width=5000, height=5000,title=f"Max Deviation : train dataset: {train_column_y} vs Ideal dataset{ideal_column_y}", toolbar_location=None, tools=TOOLS)
+        p = figure(y_range=FactorRange(factors=x_axis_list), max_width=5000, height=5000,title=f"Max Deviation : train dataset: {train_column_y} vs Ideal dataset {ideal_column_y}", toolbar_location=None, tools=TOOLS)
         p.hbar(y=x_axis_list, right=deviation, height=0.2, color=color)
         file_header = f"max_deviation_train_data_{train_column_y}_vs_ideal function_{ideal_column_y}"
         chart_filename = save_chart + file_header + ".html"
